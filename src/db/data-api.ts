@@ -2,8 +2,8 @@ npm install @neondatabase/neon-js
 // src/db/data-api.ts
 import { createClient } from "@neondatabase/neon-js";
 
-const dataApiUrl = process.env.NEON_DATA_API_URL;
-const authUrl = process.env.NEXT_PUBLIC_NEON_AUTH_URL;
+const dataApiUrl = process.env.NEON_DATA_API_URL;https://ep-hidden-credit-bbezh1mn.apirest.c-15.us-east-1.aws.neon.tech/neondb/rest/v1
+const authUrl = process.env.NEXT_PUBLIC_NEON_AUTH_URL;https://ep-hidden-credit-bbezh1mn.neonauth.c-15.us-east-1.aws.neon.tech/neondb/auth/.well-known/jwks.json
 
 if (!dataApiUrl) {
   throw new Error(

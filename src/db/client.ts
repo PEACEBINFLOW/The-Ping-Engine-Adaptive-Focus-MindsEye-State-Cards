@@ -10,7 +10,10 @@ if (!url) {
   );
 }
 
-// HTTP driver: single statements, no transactions. Cheap on serverless.
-const sql = neon(url);
-
-export const db = drizzle({ client: sql, schema });
+ // HTTP driver: single statements, no transactions. Cheap on serverless.
+ const sql = neon(url);
+ 
++// This client talks to Neon Postgres directly via DATABASE_URL.
++// PostgREST reads go through src/db/data-api.ts (NEON_DATA_API_URL).
++// Transactional writes go through src/db/transaction.ts (Pool driver).
+ export const db = drizzle({ client: sql, schema });
